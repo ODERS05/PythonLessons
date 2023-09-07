@@ -1,2 +1,1 @@
-greeting = 'Hello World!'
-print(greeting)
+print("My name is Koshoi and student id is 202312341")
