@@ -1,1 +1,2 @@
-print("My name is David and my student id is 202312411!")
+name = input("Enter your name : ")
+print("Hello " , name)
