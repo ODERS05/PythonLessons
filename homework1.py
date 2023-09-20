@@ -1,4 +1,10 @@
-hours = input("Enter Hours : ")
-rate = input("Enter Rate : ")
-Calculate_salary = int(hours) * float(rate)
-print("Salary : " , Calculate_salary)
+try:
+    hours = int(input("Enter Hours : "))
+    rate = float(input("Enter Rate : "))
+    if(hours > 40):
+        Calculate_salary = 40*rate + (hours - 40)*1.5*rate
+    else:
+        Calculate_salary = hours*rate    
+    print("Pay : " , Calculate_salary)
+except:
+    print("Error, please enter numeric input")    
