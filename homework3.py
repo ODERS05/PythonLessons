@@ -11,7 +11,7 @@ while True:
             number_of_input = number_of_input + 1
         except Exception:
             print("Invalid input. Please enter a number")    
-average = float(sum_of_input) // number_of_input
+average = float(sum_of_input) / number_of_input
 print("Sum of input numbers: ",sum_of_input)
 print("Number of input: ", number_of_input) 
 print("Average of input numbers: ", average)

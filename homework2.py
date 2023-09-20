@@ -1,7 +1,7 @@
 try:
     score = int(input("Enter your score: "))
-    if score > 100:
-        pass
+    if score > 100 or score < 0:
+        pass 
     elif score >= 90:
         grade = 'A'
     elif score >= 80: 
