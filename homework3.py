@@ -1,20 +1,23 @@
-number_of_input = 0
-sum_of_input = 0
+def num_divide3(number):
+    count = 0
+    for i in range(1, number + 1):
+        if i %3 == 0:
+            count = count + 1
+    return count
+
 while True:
-    number = input("Enter a number: ")
-    if number == "done":
-        break
-    else:
-        try:
+    try:
+        number = input("Enter a positive integer: ")
+        if number == "done":
+            print("Bye!")
+            break
+        else:
             number = int(number)
-            sum_of_input = sum_of_input + number
-            number_of_input = number_of_input + 1
-        except Exception:
-            print("Invalid input. Please enter a number")    
-if number_of_input > 0:
-    average = float(sum_of_input) / number_of_input
-    print("Sum of input numbers: ",sum_of_input)
-    print("Number of input: ", number_of_input) 
-    print("Average of input numbers: ", average)
-else:
-    print("No numbers enterned")
+        if number < 0:
+            raise Exception
+        else:
+            result = num_divide3(number)
+            print(f"Numbers divisible by 3 among numbers from 1 to {number} : {result}")
+    except Exception:
+        print("Please enter a positive number") 
+

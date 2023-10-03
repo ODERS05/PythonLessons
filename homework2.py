@@ -1,18 +1,16 @@
-try:
-    score = int(input("Enter your score: "))
-    if score > 100 or score < 0:
-        pass 
-    elif score >= 90:
-        grade = 'A'
-    elif score >= 80: 
-        grade = 'B'  
-    elif score >= 70:
-        grade = 'C' 
-    elif score >= 60:
-        grade = 'D'
+def computey(hours, rate):
+    if(hours > 40):
+        pay = (40*rate*1.0) + ((hours - 40)*1.5*rate)
     else:
-        grade = 'F'
-    print("Grade is %s." % grade)
-except Exception:
-    print("Error, please enter numeric input between 0 and 100")    
+        pay = hours*rate    
+    return pay
 
+try:
+    hours = float(input("Enter Hours : "))
+    rate = float(input("Enter Rate : "))
+    if hours < 0 or rate < 0:
+        raise Exception
+    else:
+        print("Pay : " , computey(hours, rate))
+except Exception:
+    print("Error, please enter numeric input between 0 and 100 ")   
