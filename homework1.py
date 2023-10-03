@@ -20,4 +20,4 @@ while True:
             print("Grade is ", result)
     except Exception:
         print("Error, please enter numeric input between 0 and 100")
-        
+    break
