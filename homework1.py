@@ -1,23 +1,18 @@
-def calculate_grade(grade):
-    if grade >= 90:
-        return 'A'
-    elif grade >= 80:
-        return 'B'
-    elif grade >= 70:
-        return 'C'
-    elif grade >= 60:
-        return 'D'
-    else:
-        return 'F'
-
 while True:
     try:
-        grade = int(input("Enter your Score: "))
-        if grade < 0 or grade > 100:
+        text = input("Please enter two words: ")
+        if text == "":
+            print("-- bye !!")
+            break
+        words = text.split()
+        word1 = words[0]
+        word2 = words[1]
+        if word1.isdigit() and word2.isdigit():
             raise Exception
+        if word1 < word2: 
+            print(f"{word1} come first")
         else:
-            result = calculate_grade(grade)
-            print("Grade is ", result)
+            print(f"{word2} come first")
     except Exception:
-        print("Error, please enter numeric input between 0 and 100")
-    break
+        print
+

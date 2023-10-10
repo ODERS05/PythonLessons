@@ -1,23 +1,22 @@
-def num_divide3(number):
-    count = 0
-    for i in range(1, number + 1):
-        if i %3 == 0:
-            count = count + 1
-    return count
+text = input("Please enter string: ")
+index = 0
+uppercase = 0
+lowercase = 0
+number = 0
+character = 0
 
-while True:
-    try:
-        number = input("Enter a positive integer: ")
-        if number == "done":
-            print("Bye!")
-            break
-        else:
-            number = int(number)
-        if number < 0:
-            raise Exception
-        else:
-            result = num_divide3(number)
-            print(f"Numbers divisible by 3 among numbers from 1 to {number} : {result}")
-    except Exception:
-        print("Please enter a positive number") 
-
+while index < len(text):
+    letter = text[index]
+    if letter.isupper():
+        uppercase =  uppercase + 1
+    elif letter.islower():
+        lowercase = lowercase + 1
+    elif letter.isdigit():
+        number = number + 1
+    else:
+        character = character + 1
+    index += 1
+print(f"-  Uppercase letters: {uppercase}")
+print(f"-  Lowercase letters: {lowercase}")
+print(f"-  Numbers: {number}")
+print(f"-  Other characters: {character}")
