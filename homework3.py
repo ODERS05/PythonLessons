@@ -14,7 +14,6 @@ try:
             parts_sum += parts_value
             parts_count += 1
     parts_average = parts_sum / parts_count
-    print(parts_count)
     print(f"Average spam confidence: {parts_average}")
 except NameError:
     print(f"File cannot be opened: {fname}")
