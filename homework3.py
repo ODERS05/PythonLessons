@@ -1,22 +1,20 @@
-text = input("Please enter string: ")
-index = 0
-uppercase = 0
-lowercase = 0
-number = 0
-character = 0
-
-while index < len(text):
-    letter = text[index]
-    if letter.isupper():
-        uppercase =  uppercase + 1
-    elif letter.islower():
-        lowercase = lowercase + 1
-    elif letter.isdigit():
-        number = number + 1
-    else:
-        character = character + 1
-    index += 1
-print(f"-  Uppercase letters: {uppercase}")
-print(f"-  Lowercase letters: {lowercase}")
-print(f"-  Numbers: {number}")
-print(f"-  Other characters: {character}")
+fname = input("Enter a file name: ")
+parts_value = 0
+parts_sum = 0
+parts_average = 0
+parts_count = 0
+try:
+    if fname != "mbox.txt":
+        raise NameError
+    fhand = open(fname,"r")
+    for line in fhand:
+        if line.startswith("X-DSPAM-Confidence:"):
+            parts = line.split()
+            parts_value = float(parts[1])
+            parts_sum += parts_value
+            parts_count += 1
+    parts_average = parts_sum / parts_count
+    print(parts_count)
+    print(f"Average spam confidence: {parts_average}")
+except NameError:
+    print(f"File cannot be opened: {fname}")
