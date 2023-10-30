@@ -4,8 +4,6 @@ parts_sum = 0
 parts_average = 0
 parts_count = 0
 try:
-    if fname != "mbox.txt":
-        raise NameError
     fhand = open(fname,"r")
     for line in fhand:
         if line.startswith("X-DSPAM-Confidence:"):
@@ -15,5 +13,5 @@ try:
             parts_count += 1
     parts_average = parts_sum / parts_count
     print(f"Average spam confidence: {parts_average}")
-except NameError:
+except FileNotFoundError:
     print(f"File cannot be opened: {fname}")

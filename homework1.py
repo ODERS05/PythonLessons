@@ -1,11 +1,9 @@
-fname = input("Enter file name : ")
-try:
-    if fname != "writefile.txt":
-        raise NameError
-    else:
-        fhand = open(fname, "r")
-        line = fhand.read()
-        print(line.upper())
-        fhand.close()
-except NameError:
-    print("File with this name doesn't exist!")
+def chop(numbers):
+    numbers.remove(1)
+    numbers.remove(4)
+    return None
+
+
+numbers = [1,2,3,4]
+chop(numbers)
+print(numbers)
